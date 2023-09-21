@@ -54,8 +54,8 @@ desc member101;
 
 
 -- 14th query
-alter table member101 add constraint check (max_books_allowed < 100);
-alter table member101 add constraint check (penalty_amount <=1000);
+alter table member101 add constraint max check (max_books_allowed < 100);
+alter table member101 add constraint pen_amt check (penalty_amount <=1000);
 
 -- 15th query;
 drop table books;
@@ -77,3 +77,30 @@ select * from book101;
 
 -- 20th query
 insert into book101 (select * from books);
+
+-- 21st query
+
+-- 22nd query
+select * from book101;
+
+-- 23rd query
+
+insert into books values (105, 'national geography', 'adis scott', 1000, 'science');
+select * from books;
+
+-- 24th query
+
+-- 25th query
+update books set cost = 300 , category = 'rdbms' where book_no = 103;
+
+-- 26th query
+desc lib_issue;
+desc issue;
+alter table lib_issue rename to issue;
+
+-- 27th query
+
+-- 28th query
+
+-- 29th query
+
