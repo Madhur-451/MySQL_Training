@@ -1,3 +1,53 @@
+USE library;
+delimiter $$
+drop procedure pcname;
+create procedure pcname(IN mkr varchar(50));
+
+-- mkr is a variable
+BEGIN
+	select * from cars_india_dataset where maker = mkr;
+
+END $$
+
+call pcname("Hyundai");
+
+
+
+
+delimiter $$
+CREATE PROCEDURE factorial(IN x INT)
+BEGIN
+  DECLARE result INT;
+  DECLARE i INT;
+  SET result = 1;
+  SET i = 1;
+  WHILE i <= x DO
+    SET result = result * i;
+    SET i = i + 1;
+  END WHILE;
+
+  SELECT x AS Number, result as Factorial;
+
+END;
+delimeter $$
+
+CALL factorial(1);
+CALL factorial(2);
+CALL factorial(4);
+CALL factorial(5);
+call factorial(7);
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE emp(`first name` VARCHAR(20), id INT PRIMARY KEY);
 insert into emp values('HJK', 1);
 insert into emp values('ABC', 2);
