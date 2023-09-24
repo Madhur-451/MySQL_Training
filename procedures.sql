@@ -10,6 +10,7 @@ call calculateSum(10, 50 , @result);
 select @result;
 
 
+
 delimiter <>
 create procedure findAverage()
 begin
@@ -25,3 +26,16 @@ end;
 <>
 delimiter ;
 call findAverage();
+
+
+
+delimiter //
+create procedure cgpaToPercent(in cgpa int, out percentage int)
+begin
+
+set percentage  = cgpa * 8.8;
+select percentage;
+end;
+//
+delimiter ;
+call cgpaToPercent(9.22, @percentage);
